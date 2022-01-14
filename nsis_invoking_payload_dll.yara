@@ -12,7 +12,7 @@ rule nsis_invoking_payload_dll {
 			14 00 00 00  91 00 00 05  ?? ?? ?? ??  ?? ?? ?? ??  ff ff ff ff  ff ff ff ff  ?? ?? ?? ??
 			// set overwrite off
 			0d 00 00 00  0d 00 00 00  00 00 00 00  01 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
-			// pus command string
+			// push command string
 			1f 00 00 00  ?? ?? ?? ??  00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00
 			// invoke payload dll via System.dll
 			2c 00 00 00  ?? ?? ?? ??  ?? ?? ?? ??  00 00 00 00  00 00 00 00  01 00 00 00  00 00 00 00
