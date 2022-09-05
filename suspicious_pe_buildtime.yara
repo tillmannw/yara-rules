@@ -1,5 +1,9 @@
 rule suspicious_pe_buildtime { 
-        // matches on PE files with a export table timestamp greater than the PE header build timestamp
+	meta:
+		author = "Tillmann Werner"
+		date = "2022-09-05"
+		description = "matches on PE files with a export table timestamp greater than the PE header build timestamp"
+
         condition: 
                 // basic PE header sanity check
                 uint16(0) == 0x5a4d and uint32(uint32(0x3c)) == 0x4550
