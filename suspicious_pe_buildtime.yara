@@ -38,6 +38,16 @@ rule suspicious_pe_buildtime {
                                                 // add pointer to raw data
                                                 + uint32(uint32(0x3c) + uint16(uint32(0x3c) + 0x14) + 0x18 + (i * 0x28) + 0x14)
                                         ) > uint32(uint32(0x3c) + 8)
+
+                                        // exclude export table timestamps of 0xffffffff
+                                        and uint32(
+                                                // relative offset
+                                                exprva + 4
+                                                // subtract virtual address
+                                                - uint32(uint32(0x3c) + uint16(uint32(0x3c) + 0x14) + 0x18 + (i * 0x28) + 0x0c)
+                                                // add pointer to raw data
+                                                + uint32(uint32(0x3c) + uint16(uint32(0x3c) + 0x14) + 0x18 + (i * 0x28) + 0x14)
+                                        ) != 0xffffffff
                                 )
                         )
                 )
